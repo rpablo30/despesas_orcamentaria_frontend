@@ -15,8 +15,8 @@ export class DespesasTotaisComponent {
   despesasTotais$: Observable<DespesasTotais[]>;
   displayedColumns: string[] = ['ano', 'empenho', 'liquidacao', 'pagamento'];
   chartOptions = {
-    animationEnabled: true, 
-		animationDuration: 2000, 
+    animationEnabled: true,
+		animationDuration: 2000,
     toolTip:{
       enabled: false   //enable here
     },
@@ -26,13 +26,13 @@ export class DespesasTotaisComponent {
     axisY: {
       interval:0.03,
       viewportMinimum:4.05,
-      prefix: "R$ ", 
+      prefix: "R$ ",
       suffix: " bi",
       crosshair: {
         enabled: true,
         snapToDataPoint: true
       }
-    
+
 
     },
     data: [{
@@ -42,7 +42,7 @@ export class DespesasTotaisComponent {
         { label: "Liquidado", y: 0  },
         { label: "Pago", y: 0  },
       ]
-    }]                
+    }]
   };
   constructor(
     private despesasService: DespesasService,

@@ -3,6 +3,5 @@ export interface DespesasTotais {
     empenho: number;
     liquidacao: number;
     pagamento: number;
-  
+
   }
-  
