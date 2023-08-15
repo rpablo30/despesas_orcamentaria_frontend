@@ -1,3 +1,29 @@
-.sidenav{
-  width: 16%;
+.sidenav {
+  height: 100%;
+}
+
+.nav-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav-list {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.mat-list-item {
+  flex-grow: 1;
+}
+
+
+.sidenav {
+  height: 100%;
+}
+
+.nav-list-wrapper {
+  height: calc(100% - 64px); /* Ajuste conforme a altura da barra de ferramentas */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a altura */
+  margin-bottom: -16px; /* Remove o espaço extra que causa a barra de rolagem */
 }
