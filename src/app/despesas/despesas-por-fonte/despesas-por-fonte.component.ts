@@ -46,7 +46,7 @@ export class DespesasPorFonteComponent {
     },
     axisX: {
       reversed: true,
-      
+
     },
     data: [{
       type: "doughnut",
@@ -86,15 +86,15 @@ export class DespesasPorFonteComponent {
               {  y: d.pagamento/ 1000000, label: "Pago" }
             ]
           };
-  
+
         });
 
-/**    
+/**
       this.chartOptions.data = [
         {
           type: "doughnut",
           name: "Empenhado",
-        
+
           dataPoints: despesas.map((d) => { return { x: d.fonteNome, y: d.empenho/ 1000000 }; })
         },
       ];
@@ -107,7 +107,7 @@ export class DespesasPorFonteComponent {
     });
   }
 
-  
+
 
 }
 function moneyScale(value: number) {

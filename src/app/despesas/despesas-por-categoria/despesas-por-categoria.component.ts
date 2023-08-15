@@ -32,7 +32,7 @@ export class DespesasPorCategoriaComponent {
     },
     axisX: {
       reversed: true,
-      
+
     },
     data: [{
       type: "stackedBar",
@@ -79,7 +79,7 @@ export class DespesasPorCategoriaComponent {
 
 
 
-    }); 
+    });
 
   }
   onError(errorMsg: string) {

@@ -22,7 +22,7 @@ export class DespesasPorMesComponent {
       text: "Despesas por mês"
     },
     toolTip: {
-      shared: true  //disable here. 
+      shared: true  //disable here.
     },
     axisY: {
       prefix: "R$ ",
