@@ -19,7 +19,7 @@ export class DespesasPorMesComponent {
     animationEnabled: true,
     animationDuration: 2000,
     title: {
-      text: "Despesas por mês"
+      text: ""
     },
     toolTip: {
       shared: true  //disable here.

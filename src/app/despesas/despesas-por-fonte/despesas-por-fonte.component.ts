@@ -19,7 +19,7 @@ export class DespesasPorFonteComponent {
     animationEnabled: true,
     animationDuration: 2000,
     title: {
-      text: "Despesas por Fonte Recursos"
+      text: ""
     },
     toolTip:  {
       contentFormatter: function (e:any) {

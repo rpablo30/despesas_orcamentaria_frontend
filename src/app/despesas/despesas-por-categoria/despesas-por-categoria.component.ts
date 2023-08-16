@@ -20,7 +20,7 @@ export class DespesasPorCategoriaComponent {
     animationEnabled: true,
     animationDuration: 2000,
     title: {
-      text: "Despesas por Categoria Econômica"
+      text: ""
     },
     toolTip:  {
       shared: true
@@ -35,7 +35,7 @@ export class DespesasPorCategoriaComponent {
 
     },
     data: [{
-      type: "doughnut",
+      type: "pie",
       name: "Empenhado",
       showInLegend: true,
       legendMarkerType: "square",

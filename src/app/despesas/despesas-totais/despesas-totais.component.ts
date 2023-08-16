@@ -21,7 +21,7 @@ export class DespesasTotaisComponent {
       enabled: false   //enable here
     },
     title: {
-    	text: "Valores totais das despesas"
+    	text: ""
     },
     axisY: {
       interval:0.03,
