@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +9,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+
+
+
+
+  }
   title = 'gastos-recife-front';
 
   selectedOption: string = '';
 
+  showImage: boolean = true;
   onOptionChange() {
     if (this.selectedOption === 'none') {
       // Se a opção "none" for selecionada, navegue para uma rota vazia (em branco)

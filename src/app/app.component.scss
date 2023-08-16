@@ -27,3 +27,17 @@
   overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a altura */
   margin-bottom: -16px; /* Remove o espaço extra que causa a barra de rolagem */
 }
+
+.red-background {
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-container {
+  text-align: center;
+  color: white;
+}

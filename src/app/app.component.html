@@ -1,19 +1,34 @@
+<mat-form-field>
+  <mat-label>Selecione uma opção</mat-label>
+  <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()">
+    <mat-option value="welcome">Home</mat-option>
+    <mat-option value="totais">Total</mat-option>
+    <mat-option value="mes">Por Mês</mat-option>
+    <mat-option value="categoria">Por Categoria</mat-option>
+    <mat-option value="fonte">Por Fonte</mat-option>
+  </mat-select>
+</mat-form-field>
 <mat-sidenav-container class="container">
-  <mat-sidenav class="sidenav" mode="side" opened disableClose>
-    <mat-nav-list class="nav-list-wrapper">
-      <mat-form-field>
-        <mat-label>Selecione uma opção</mat-label>
-        <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()">
-          <mat-option value="totais">Totais</mat-option>
-          <mat-option value="mes">Por Mês</mat-option>
-          <mat-option value="categoria">Por Categoria</mat-option>
-          <mat-option value="fonte">Por Fonte</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-nav-list>
+
+  <mat-sidenav *ngIf="selectedOption !== 'none' && selectedOption !== 'welcome'" class="sidenav" mode="side" opened disableClose>
+
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content *ngIf="selectedOption !== 'none' && selectedOption !== 'welcome'">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
+
+  <div *ngIf="selectedOption === 'welcome'" class="welcome-message">
+    <h1>Bem-vindo à aplicação de despesas</h1>
+    <p>Selecione uma opção no menu à esquerda para começar.</p>
+  </div>
+
 </mat-sidenav-container>
+<br><br><br><br><br><br><br><br><br>
+<mat-toolbar color="warn">
+  <div class="welcome-container">
+    <h1 *ngIf="showImage">Bem-vindo à nossa aplicação de gastos financeiros!</h1>
+    <img *ngIf="showImage" src="assets/imgres.jpg" alt="Pilha de Moedas" style="width: 300px;">
+  </div>
+</mat-toolbar>
+
