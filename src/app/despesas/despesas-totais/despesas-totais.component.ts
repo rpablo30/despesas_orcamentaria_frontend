@@ -36,7 +36,7 @@ export class DespesasTotaisComponent {
 
     },
     data: [{
-      type: "column",
+      type: "pie",
       dataPoints: [
         { label: "Empenhado",  y: 0  },
         { label: "Liquidado", y: 0  },
@@ -60,7 +60,7 @@ export class DespesasTotaisComponent {
 
 
       this.chartOptions.data[0] = {
-        type: "column",
+        type: "pie",
         dataPoints: [
           { label: "Empenhado",  y: despesas[0].empenho/1000000000  },
           { label: "Liquidado", y: despesas[0].liquidacao /1000000000},

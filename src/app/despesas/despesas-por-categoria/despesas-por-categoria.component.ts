@@ -35,7 +35,7 @@ export class DespesasPorCategoriaComponent {
 
     },
     data: [{
-      type: "stackedBar",
+      type: "doughnut",
       name: "Empenhado",
       showInLegend: true,
       legendMarkerType: "square",
@@ -63,7 +63,7 @@ export class DespesasPorCategoriaComponent {
 
       this.chartOptions.data = despesas.map(d => {
         return{
-          type: "stackedBar",
+          type: "doughnut",
           name: d.categoriaNome,
           showInLegend: true,
           legendMarkerType: "square",
