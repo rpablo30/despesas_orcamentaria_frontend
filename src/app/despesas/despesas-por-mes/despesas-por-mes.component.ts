@@ -16,6 +16,7 @@ export class DespesasPorMesComponent {
   despesasPorMes$: Observable<DespesasPorMes[]>;
   displayedColumns: string[] = ['mes', 'empenho', 'liquidacao', 'pagamento'];
   chartOptions = {
+    theme: 'dark1',
     animationEnabled: true,
     animationDuration: 2000,
     title: {
