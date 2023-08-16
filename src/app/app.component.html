@@ -1,13 +1,15 @@
 <mat-sidenav-container class="container">
   <mat-sidenav class="sidenav" mode="side" opened disableClose>
     <mat-nav-list class="nav-list-wrapper">
-      <a mat-list-item routerLink="/despesas"><b>Totais</b></a>
-      <br><br><br><br>
-      <a mat-list-item routerLink="/despesas/mes"><b>por Mês</b></a>
-      <br><br><br><br>
-      <a mat-list-item routerLink="/despesas/categoria"><b>por Categoria</b></a>
-      <br><br><br><br>
-      <a mat-list-item routerLink="/despesas/fonte"><b>por Fonte</b></a>
+      <mat-form-field>
+        <mat-label>Selecione uma opção</mat-label>
+        <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()">
+          <mat-option value="totais">Totais</mat-option>
+          <mat-option value="mes">Por Mês</mat-option>
+          <mat-option value="categoria">Por Categoria</mat-option>
+          <mat-option value="fonte">Por Fonte</mat-option>
+        </mat-select>
+      </mat-form-field>
     </mat-nav-list>
   </mat-sidenav>
 
