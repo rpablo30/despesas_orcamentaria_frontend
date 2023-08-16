@@ -15,6 +15,7 @@ export class DespesasTotaisComponent {
   despesasTotais$: Observable<DespesasTotais[]>;
   displayedColumns: string[] = ['ano', 'empenho', 'liquidacao', 'pagamento'];
   chartOptions = {
+    theme: "dark2",
     animationEnabled: true,
 		animationDuration: 2000,
     toolTip:{

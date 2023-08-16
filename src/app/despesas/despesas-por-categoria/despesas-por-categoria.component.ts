@@ -17,6 +17,7 @@ export class DespesasPorCategoriaComponent {
   despesasPorCategoria$: Observable<DespesasPorCategoria[]>;
   displayedColumns: string[] = ['categoriaCodigo','categoriaNome', 'empenho', 'liquidacao', 'pagamento'];
   chartOptions = {
+    theme: "dark2",
     animationEnabled: true,
     animationDuration: 2000,
     title: {
@@ -68,9 +69,9 @@ export class DespesasPorCategoriaComponent {
           showInLegend: true,
           legendMarkerType: "square",
           dataPoints: [
-            {  y: d.empenho/ 1000000, label: "Empenhado"},
-            {  y: d.liquidacao/ 1000000, label: "Liquidado" },
-            {  y: d.pagamento/ 1000000, label: "Pago" }
+            {  y: d.empenho/ 1000000, label: "Empenhado" , color: "#FF5733"},
+            {  y: d.liquidacao/ 1000000, label: "Liquidado" , color: "#0074D9" },
+            {  y: d.pagamento/ 1000000, label: "Pago" , color: "#00BCD4" }
           ]
         };
 

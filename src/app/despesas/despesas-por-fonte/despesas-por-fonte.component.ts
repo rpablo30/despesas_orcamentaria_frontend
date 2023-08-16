@@ -16,6 +16,7 @@ export class DespesasPorFonteComponent {
   despesasPorFonte$: Observable<DespesasPorFonte[]>;
   displayedColumns: string[] = ['fonteCodigo','fonteNome', 'empenho', 'liquidacao', 'pagamento'];
   chartOptions = {
+    theme: "dark2",
     animationEnabled: true,
     animationDuration: 2000,
     title: {
