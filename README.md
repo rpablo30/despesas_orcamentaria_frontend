@@ -25,10 +25,8 @@ Este projeto foi gerado com [Angular CLI] (https://github.com/rpablo30/despesas_
 
 ## Capturas de Tela
 
-![Captura de Tela 1](/screenshots/screenshot1.png)
-![Captura de Tela 2](/screenshots/screenshot2.gif)
+![Captura de Tela 1](/src/assets/Captura%20de%20tela%202023-08-17%20104745.png)
 
 ## Recursos Adicionais
 
 - [Documentação Angular](https://angular.io/docs)
-- [Tutorial Angular no SiteXYZ](https://www.sitexyz.com/angular-tutorial)
