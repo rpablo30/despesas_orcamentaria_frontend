@@ -8,8 +8,8 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 
 @Component({
   selector: 'app-despesas-totais',
-  templateUrl: './despesas-totais.component.html',
-  styleUrls: ['./despesas-totais.component.scss']
+  templateUrl: './totais.component.html',
+  styleUrls: ['./totais.component.scss']
 })
 export class DespesasTotaisComponent {
   despesasTotais$: Observable<DespesasTotais[]>;

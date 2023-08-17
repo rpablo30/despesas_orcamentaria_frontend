@@ -7,9 +7,9 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 import { DespesasPorCategoria } from '../model/despeas-por-categoria';
 
 @Component({
-  selector: 'app-despesas-por-categoria',
-  templateUrl: './despesas-por-categoria.component.html',
-  styleUrls: ['./despesas-por-categoria.component.scss']
+  selector: 'app-categoria',
+  templateUrl: './categoria.component.html',
+  styleUrls: ['./categoria.component.scss']
 })
 export class DespesasPorCategoriaComponent {
 
