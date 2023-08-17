@@ -1,27 +1,34 @@
 # GastosRecife
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
+Crie um App em Angular e Backend Java com SpringBoot, para ler e apresentar dados sobre os gastos do Recife
 
-## Development server
+datasource http://dados.recife.pe.gov.br/dataset/despesas-orcamentarias/resource/d4d8a7f0-d4be-4397-b950-f0c991438111
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Projeto incrivel desenvolvido para demonstrar o custos e gastos da cidade de Recife referente ao ano de 2017 . 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Este projeto foi gerado com [Angular CLI] (https://github.com/rpablo30/despesas_orcamentaria_backend).
 
-## Running end-to-end tests
+# Como Rodar o Projeto 
+1. Clone o Repositório : ( https://github.com/rpablo30/despesas_orcamentaria_backend );
+2. Navegar até a pasta : /desafio/despesas_orcamentaria_frontend ;
+3. Banco de dados utilizado : h2 ;    
+4. Instalar as dependências : `npm install` ;
+5. Iniciar o servidor de desenvolvimento: `ng-serve`;
+6. Navegar até `http://localhost:8080/`. A aplicação irá carregar automáticamente.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Capturas de Tela
+
+![Captura de Tela 1](/screenshots/screenshot1.png)
+![Captura de Tela 2](/screenshots/screenshot2.gif)
+
+## Recursos Adicionais
+
+- [Documentação Angular](https://angular.io/docs)
+- [Tutorial Angular no SiteXYZ](https://www.sitexyz.com/angular-tutorial)

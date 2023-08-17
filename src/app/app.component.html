@@ -8,27 +8,27 @@
     <mat-option value="fonte">Por Fonte</mat-option>
   </mat-select>
 </mat-form-field>
+
 <mat-sidenav-container class="container">
-
   <mat-sidenav *ngIf="selectedOption !== 'none' && selectedOption !== 'welcome'" class="sidenav" mode="side" opened disableClose>
-
+    <!-- Conteúdo do sidenav -->
   </mat-sidenav>
 
   <mat-sidenav-content *ngIf="selectedOption !== 'none' && selectedOption !== 'welcome'">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 
-  <div *ngIf="selectedOption === 'welcome'" class="welcome-message">
-    <h1>Bem-vindo à aplicação de despesas</h1>
-    <p>Selecione uma opção no menu à esquerda para começar.</p>
+  <div *ngIf="selectedOption === 'welcome'" class="welcome-message" style="background-color: red; text-align: center; padding: 20px;">
+    <h1 style="color: white;">Bem-vindo à aplicação de despesas</h1>
+    <p style="color: white;">Selecione uma opção no menu à esquerda para começar.</p>
   </div>
+
 
 </mat-sidenav-container>
-<br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <mat-toolbar color="warn">
-  <div class="welcome-container">
-    <h1 *ngIf="showImage">Bem-vindo à nossa aplicação de gastos financeiros!</h1>
-    <img *ngIf="showImage" src="assets/imgres.jpg" alt="Pilha de Moedas" style="width: 300px;">
+  <div class="welcome-container" style="text-align: center;">
+    <img *ngIf="showImage && selectedOption === 'welcome'" src="assets/imgres.jpg" alt="Pilha de Moedas" style="width: 600px; height: auto; margin-left: 360px;">
   </div>
 </mat-toolbar>
-

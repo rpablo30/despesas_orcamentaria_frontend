@@ -41,3 +41,7 @@
   text-align: center;
   color: white;
 }
+.mat-toolbar.mat-warn {
+  --mat-toolbar-container-background-color: #ffffff00;
+  --mat-toolbar-container-text-color: white;
+}
