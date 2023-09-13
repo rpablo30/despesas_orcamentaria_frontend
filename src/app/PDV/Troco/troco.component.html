@@ -1,0 +1,24 @@
+<span style="display: flex; justify-content: space-between; width: 100%;">
+  <span>Troco</span>
+</span>
+
+<form [formGroup]="form" (ngSubmit)="onFinish()">
+  <div class="form-group">
+    <label for="compra">Valor da Compra</label>
+    <input type="number" id="compra" class="form-control" formControlName="compra" required>
+  </div>
+  <div class="form-group">
+    <label for="dinheiro">Dinheiro Entregue</label>
+    <input type="number" id="dinheiro" class="form-control" formControlName="dinheiro" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<div *ngIf="showAnswer">
+  <h2>Troco</h2>
+  <p>Valor da compra: {{ compra }}</p>
+  <p>Valor do troco: {{ troco }}</p>
+  <p>Notas de 100 do troco: {{ notas100 }}</p>
+  <p>Notas de 10 do troco: {{ notas10 }}</p>
+  <p>Notas de 1 do troco: {{ notas1 }}</p>
+</div>

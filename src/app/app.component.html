@@ -2,10 +2,10 @@
   <mat-label>Selecione uma opção</mat-label>
   <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()">
     <mat-option value="welcome">Home</mat-option>
-    <mat-option value="totais">Total</mat-option>
-    <mat-option value="mes">Por Mês</mat-option>
-    <mat-option value="categoria">Por Categoria</mat-option>
-    <mat-option value="fonte">Por Fonte</mat-option>
+    <mat-option value="palindromos">Números Palíndromos</mat-option>
+    <mat-option value="troco">Troco</mat-option>
+    <mat-option value="veiculos">Veículos</mat-option>
+    <mat-option value="procurarcep">Pesquisar Por CEP</mat-option>
   </mat-select>
 </mat-form-field>
 
@@ -19,7 +19,7 @@
   </mat-sidenav-content>
 
   <div *ngIf="selectedOption === 'welcome'" class="welcome-message" style="background-color: red; text-align: center; padding: 20px;">
-    <h1 style="color: white;">Bem-vindo à aplicação de despesas</h1>
+    <h1 style="color: white;">Bem-vindo ao teste Desenvolvido Pelo Desenvolvedor Rodrigo</h1>
     <p style="color: white;">Selecione uma opção no menu à esquerda para começar.</p>
   </div>
 
@@ -29,6 +29,6 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <mat-toolbar color="warn">
   <div class="welcome-container" style="text-align: center;">
-    <img *ngIf="showImage && selectedOption === 'welcome'" src="assets/imgres.jpg" alt="Pilha de Moedas" style="width: 600px; height: auto; margin-left: 640px;">
+    <img *ngIf="showImage && selectedOption === 'welcome'" src="assets/kukac" alt="Pilha de Moedas" style="width: 600px; height: auto; margin-left: 640px;">
   </div>
 </mat-toolbar>

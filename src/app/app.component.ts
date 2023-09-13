@@ -10,12 +10,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   constructor(private router: Router) {
-
-
-
-
   }
-  title = 'gastos-recife-front';
+  title = 'KUKAC-front';
 
   selectedOption: string = '';
 
@@ -26,17 +22,17 @@ export class AppComponent {
       this.router.navigate(['/']);
     } else {
       switch (this.selectedOption) {
-        case 'totais':
-          this.router.navigate(['/despesas']);
+        case 'palindromos':
+          this.router.navigate(['/palindromos']);
           break;
-        case 'mes':
-          this.router.navigate(['/despesas/mes']);
+        case 'troco':
+          this.router.navigate(['/troco']);
           break;
-        case 'categoria':
-          this.router.navigate(['/despesas/categoria']);
+        case 'veiculos':
+          this.router.navigate(['/veiculos']);
           break;
-        case 'fonte':
-          this.router.navigate(['/despesas/fonte']);
+        case 'procurarcep':
+          this.router.navigate(['/procurarcep']);
           break;
         default:
           // Lógica para uma opção desconhecida (opcional)
