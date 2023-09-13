@@ -1,5 +1,47 @@
+<div class="container" style="text-align: left; padding: 20px; border: 1px solid #ccc">
+    <div class="form-container">
+        <h1>Informações sobre Veículos</h1>
+        
+        <form style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <label for="modelo" style="text-align: center; width: 300px;">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required style="width: 300px;">
+            <br>
+            <label for="ano" style="text-align: center; width: 300px;">Ano de Fabricação:</label>
+            <input type="number" id="ano" name="ano" min="1900" max="2099" required style="width: 300px;">
+            <br>
+            <label for="marca" style="text-align: center; width: 300px;">Marca:</label>
+            <input type="text" id="marca" name="marca" required style="width: 300px;">
+            <br>
+            <label for="tipo" style="text-align: center; width: 300px;">Tipo de Veículo:</label>
+            <select id="tipo" name="tipo" required style="width: 300px;" [(ngModel)]="tipoVeiculo">
+                <option value="carro">Carro</option>
+                <option value="moto">Moto</option>
+            </select>
+            <br>
+            
+            <!-- Campo de portas para carro -->
+            <div *ngIf="checkTipoVeiculo()">
+                <label for="portasCarro" style="text-align: center; width: 300px;">Número de Portas do Carro:</label><br>
+                <select id="portasCarro" name="portasCarro" required style="width: 300px;" [(ngModel)]="numeroPortasCarro">
+                    <option [ngValue]="null" disabled selected hidden>Escolha</option>
+                    <option value="2">2 Portas</option>
+                    <option value="4">4 Portas</option>
+                </select>
+                <br>
+            </div>
 
-  <span style="display: flex; justify-content: space-between; width: 100%;">
-    <span>Veículosss</span>
-    <span>Veículosss</span>
-  </span>
+            <!-- Campo de portas para moto -->
+            <div *ngIf="!checkTipoVeiculo()">
+                <label for="portasMoto" style="text-align: center; width: 300px;">Número de Portas da Moto:</label><br>
+                <select id="portasMoto" name="portasMoto" required style="width: 300px;" [(ngModel)]="numeroPortasMoto" disabled>
+                    <option [ngValue]="null" disabled selected hidden>2 Portas</option>
+                </select>
+                <br>
+            </div>
+
+            <!-- Outros campos do formulário aqui -->
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>

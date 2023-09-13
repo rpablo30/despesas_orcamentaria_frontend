@@ -12,11 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProcurarcepComponent } from './PDV/Procurar Por CEP/procurarcep.component'; // Certifique-se de que este é o caminho correto para o seu componente
+import { VeiculosComponent } from './PDV/Veículos/veiculos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProcurarcepComponent, // Declare o componente aqui
+    ProcurarcepComponent, 
+    VeiculosComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class VeiculosComponent {
   myForm: FormGroup;
+  tipoVeiculo: string = 'carro'; // Valor padrão é 'carro'
+  numeroPortasCarro: string | null = null; // Inicialmente nenhum valor selecionado
+  numeroPortasMoto: string | null = null; // Inicialmente nenhum valor selecionado
+
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.myForm = this.formBuilder.group({
@@ -20,6 +24,22 @@ export class VeiculosComponent {
       passageiros: ['1'], // Valor padrão
     });
   }
+
+  
+
+  // checkTipoVeiculo() {
+  //   if (this.tipoVeiculo === 'carro') {
+  //     return true; // Mostrar o campo de portas
+  //   } else {
+  //     return false; // Ocultar o campo de portas
+  //   }
+  // }
+
+  checkTipoVeiculo() {
+    return this.tipoVeiculo === 'carro';
+  }
+
+
 
   onSubmit() {
     if (this.myForm.valid) {
