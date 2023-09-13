@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field style="margin-bottom: 10px;">
   <mat-label>Selecione uma opção</mat-label>
   <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()">
     <mat-option value="welcome">Home</mat-option>
@@ -18,17 +18,17 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 
-  <div *ngIf="selectedOption === 'welcome'" class="welcome-message" style="background-color: red; text-align: center; padding: 20px;">
-    <h1 style="color: white;">Bem-vindo ao teste Desenvolvido Pelo Desenvolvedor Rodrigo</h1>
+  <div *ngIf="selectedOption === 'welcome'" class="welcome-message" style="background-color: red; text-align: center; padding: 20px; margin-top: 10px;">
+    <h1 style="color: white;">Bem-vindo a aplicação feito pelo Desenvolvedor Rodrigo Pablo</h1>
+    <h1 style="color: white;">Feito em Angular e NodeJS</h1>
     <p style="color: white;">Selecione uma opção no menu à esquerda para começar.</p>
   </div>
-
 
 </mat-sidenav-container>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <mat-toolbar color="warn">
   <div class="welcome-container" style="text-align: center;">
-    <img *ngIf="showImage && selectedOption === 'welcome'" src="assets/kukac" alt="Pilha de Moedas" style="width: 600px; height: auto; margin-left: 640px;">
+    <img *ngIf="showImage && selectedOption === 'welcome'" src="assets/kukac" alt="Pilha de Moedas" style="width: 600px; height: auto; margin-left: auto; margin-right: auto;">
   </div>
 </mat-toolbar>

@@ -1,24 +1,24 @@
-<span style="display: flex; justify-content: space-between; width: 100%;">
-  <span>Troco</span>
-</span>
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 10px;">
+  <span style="font-size: 24px; margin-bottom: 10px;">Troco</span>
 
-<form [formGroup]="form" (ngSubmit)="onFinish()">
-  <div class="form-group">
-    <label for="compra">Valor da Compra</label>
-    <input type="number" id="compra" class="form-control" formControlName="compra" required>
-  </div>
-  <div class="form-group">
-    <label for="dinheiro">Dinheiro Entregue</label>
-    <input type="number" id="dinheiro" class="form-control" formControlName="dinheiro" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
+  <form [formGroup]="form" (ngSubmit)="onFinish()">
+    <div class="form-group" style="width: 200px;">
+      <label for="compra" style="font-size: 18px;">Valor da Compra</label>
+      <input type="number" id="compra" class="form-control" formControlName="compra" required>
+    </div>
+    <div class="form-group" style="width: 200px;">
+      <label for="dinheiro" style="font-size: 18px;">Dinheiro Entregue</label>
+      <input type="number" id="dinheiro" class="form-control" formControlName="dinheiro" required>
+    </div>
+    <button type="submit" class="btn btn-primary" style="font-size: 18px; margin-top: 10px;">Enviar</button>
+  </form>
 
-<div *ngIf="showAnswer">
-  <h2>Troco</h2>
-  <p>Valor da compra: {{ compra }}</p>
-  <p>Valor do troco: {{ troco }}</p>
-  <p>Notas de 100 do troco: {{ notas100 }}</p>
-  <p>Notas de 10 do troco: {{ notas10 }}</p>
-  <p>Notas de 1 do troco: {{ notas1 }}</p>
+  <div *ngIf="showAnswer" style="text-align: center;">
+    <h2>Troco</h2>
+    <p style="font-size: 18px;">Valor da compra: {{ compra }}</p>
+    <p style="font-size: 18px;">Valor do troco: {{ troco }}</p>
+    <p style="font-size: 18px;">Notas de 100 do troco: {{ notas100 }}</p>
+    <p style="font-size: 18px;">Notas de 10 do troco: {{ notas10 }}</p>
+    <p style="font-size: 18px;">Notas de 1 do troco: {{ notas1 }}</p>
+  </div>
 </div>

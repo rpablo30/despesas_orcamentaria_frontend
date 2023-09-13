@@ -3,20 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cep } from '../model/cep';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class PdvService {
 
-  //private readonly API = 'http://localhost:3003/';
+  private readonly VIACEP_API = 'https://viacep.com.br/ws/';
 
   constructor(private httpClient: HttpClient) {}
 
-  getCEP(cep: Cep ):Observable<Cep >{
-    return this.http.get<Cep>(`https://viacep.com.br/ws/${cep}/json/` );
+  getCEP(cep: string): Observable<Cep> {
+    const url = `${this.VIACEP_API}${cep}/json/`;
+    return this.httpClient.get<Cep>(url);
   }
-  
 
- 
+  cadastrarVeiculo(){
+    console.log("Chegou na classe de serviço ;")
+  }
+
+
+
 }

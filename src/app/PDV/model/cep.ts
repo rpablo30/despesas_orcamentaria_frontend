@@ -1,10 +1,8 @@
 export interface Cep {
-  cep: string ; 
-  logradouro: string ; 
-  numero: string ; 
-  complemento: string ; 
-  cidade: string ; 
-  bairro: string ; 
-  estado: string ; 
+  cep: string;
+  logradouro: string;
+  bairro: string;
+  localidade: string; 
+  uf: string;
   ddd: string;
 }
