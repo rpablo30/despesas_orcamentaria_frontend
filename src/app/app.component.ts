@@ -35,7 +35,7 @@ export class AppComponent {
           this.router.navigate(['/procurarcep']);
           break;
         default:
-          // Lógica para uma opção desconhecida (opcional)
+         
           break;
       }
     }

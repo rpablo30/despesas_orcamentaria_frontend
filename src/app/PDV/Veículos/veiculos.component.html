@@ -1,47 +1,64 @@
-<div class="container" style="text-align: left; padding: 20px; border: 1px solid #ccc">
-    <div class="form-container">
-        <h1>Informações sobre Veículos</h1>
-        
-        <form style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-            <label for="modelo" style="text-align: center; width: 300px;">Modelo:</label>
-            <input type="text" id="modelo" name="modelo" required style="width: 300px;">
-            <br>
-            <label for="ano" style="text-align: center; width: 300px;">Ano de Fabricação:</label>
-            <input type="number" id="ano" name="ano" min="1900" max="2099" required style="width: 300px;">
-            <br>
-            <label for="marca" style="text-align: center; width: 300px;">Marca:</label>
-            <input type="text" id="marca" name="marca" required style="width: 300px;">
-            <br>
-            <label for="tipo" style="text-align: center; width: 300px;">Tipo de Veículo:</label>
-            <select id="tipo" name="tipo" required style="width: 300px;" [(ngModel)]="tipoVeiculo">
-                <option value="carro">Carro</option>
-                <option value="moto">Moto</option>
-            </select>
-            <br>
-            
-            <!-- Campo de portas para carro -->
-            <div *ngIf="checkTipoVeiculo()">
-                <label for="portasCarro" style="text-align: center; width: 300px;">Número de Portas do Carro:</label><br>
-                <select id="portasCarro" name="portasCarro" required style="width: 300px;" [(ngModel)]="numeroPortasCarro">
-                    <option [ngValue]="null" disabled selected hidden>Escolha</option>
-                    <option value="2">2 Portas</option>
-                    <option value="4">4 Portas</option>
-                </select>
-                <br>
-            </div>
+<div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+  <div class="form-container" style="text-align: left; padding: 20px; border: 1px solid #ccc; max-width: 400px; width: 100%;">
+    <h1>Informações sobre Veículos</h1>
 
-            <!-- Campo de portas para moto -->
-            <div *ngIf="!checkTipoVeiculo()">
-                <label for="portasMoto" style="text-align: center; width: 300px;">Número de Portas da Moto:</label><br>
-                <select id="portasMoto" name="portasMoto" required style="width: 300px;" [(ngModel)]="numeroPortasMoto" disabled>
-                    <option [ngValue]="null" disabled selected hidden>2 Portas</option>
-                </select>
-                <br>
-            </div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="veiculoForm">
+      <label for="modelo">Modelo:</label>
+      <input type="text" id="modelo" name="modelo" formControlName="modelo" required>
+      <div *ngIf="veiculoForm.get('modelo')?.hasError('required') && veiculoForm.get('modelo')?.touched">
+        Este campo é obrigatório.
+      </div>
 
-            <!-- Outros campos do formulário aqui -->
+      <label for="ano">Ano de Fabricação:</label>
+      <input type="number" id="ano" name="ano" formControlName="anoDeFabricacao" min="1900" max="2099" required>
+      <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('required') && veiculoForm.get('anoDeFabricacao')?.touched">
+        Este campo é obrigatório.
+      </div>
+      <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('min') && veiculoForm.get('anoDeFabricacao')?.touched">
+        O ano deve ser no mínimo 1900.
+      </div>
+      <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('max') && veiculoForm.get('anoDeFabricacao')?.touched">
+        O ano deve ser no máximo 2099.
+      </div>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca" name="marca" formControlName="marca" required>
+      <div *ngIf="veiculoForm.get('marca')?.hasError('required') && veiculoForm.get('marca')?.touched">
+        Este campo é obrigatório.
+      </div>
+
+      <label for="tipo">Tipo de Veículo:</label>
+      <select id="tipo" name="tipo" formControlName="tipo" required>
+        <option value="carro">Carro</option>
+        <option value="moto">Moto</option>
+      </select>
+      <div *ngIf="veiculoForm.get('tipo')?.hasError('required') && veiculoForm.get('tipo')?.touched">
+        Este campo é obrigatório.
+      </div>
+
+      <!-- Campo de portas para carro -->
+      <div *ngIf="veiculoForm.get('tipo')?.value === 'carro'">
+        <label for="portasCarro">Número de Portas do Carro:</label>
+        <select id="portasCarro" name="portasCarro" formControlName="portas" required>
+          <option [ngValue]="null" disabled selected hidden>Escolha</option>
+          <option value="2">2 Portas</option>
+          <option value="4">4 Portas</option>
+        </select>
+        <div *ngIf="veiculoForm.get('portas')?.hasError('required') && veiculoForm.get('portas')?.touched">
+          Este campo é obrigatório.
+        </div>
+      </div>
+
+      <!-- Campo de portas para moto -->
+      <div *ngIf="veiculoForm.get('tipo')?.value === 'moto'">
+        <label for="portasMoto">Número de Portas da Moto:</label>
+        <select id="portasMoto" name="portasMoto" formControlName="passageiros">
+          <option [ngValue]="null" disabled selected hidden>2 Portas</option>
+        </select>
+      </div>
+
+      <!-- Outros campos do formulário aqui -->
+      <button type="button" (click)="onSubmit()">Enviar</button>
+    </form>
+  </div>
 </div>

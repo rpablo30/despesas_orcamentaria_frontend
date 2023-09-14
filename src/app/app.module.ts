@@ -13,13 +13,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProcurarcepComponent } from './PDV/Procurar Por CEP/procurarcep.component'; // Certifique-se de que este é o caminho correto para o seu componente
 import { VeiculosComponent } from './PDV/Veículos/veiculos.component';
+import { PdvService } from './PDV/services/pdv.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProcurarcepComponent, 
     VeiculosComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,9 @@ import { VeiculosComponent } from './PDV/Veículos/veiculos.component';
     MatCardModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [
+    PdvService, 
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
