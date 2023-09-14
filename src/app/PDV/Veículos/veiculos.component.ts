@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Veiculos } from '../model/veiculos';
 import { PdvService } from '../services/pdv.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-veiculos',
@@ -21,7 +22,8 @@ export class VeiculosComponent {
   constructor(
     private formBuilder: FormBuilder,
     private pdvService: PdvService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.veiculoForm = this.formBuilder.group({
       modelo: ['', Validators.required],
@@ -35,22 +37,19 @@ export class VeiculosComponent {
 
   onSubmit() {
     if (this.veiculoForm.valid) {
-      // Use o método .value do FormGroup para obter os valores do formulário
       const formValues = this.veiculoForm.value;
-
-      // Copie os valores do formulário para o objeto veiculo
       this.veiculo = { ...this.veiculo, ...formValues };
 
-      
       this.pdvService.cadastrarVeiculo(this.veiculo).subscribe(
         () => {
           console.log('Veículo cadastrado com sucesso');
           
+          this.toastr.success('Carro cadastrado com sucesso', 'Sucesso');
+
           this.router.navigate(['/veiculos']);
         },
         (error) => {
           console.error('Erro ao cadastrar veículo:', error);
-         
         }
       );
       this.veiculoForm.reset();

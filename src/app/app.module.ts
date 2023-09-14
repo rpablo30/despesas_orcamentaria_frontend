@@ -16,6 +16,7 @@ import { VeiculosComponent } from './PDV/Veículos/veiculos.component';
 import { PdvService } from './PDV/services/pdv.service';
 import { ToastrModule } from 'ngx-toastr';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,9 @@ import { ToastrModule } from 'ngx-toastr';
     MatToolbarModule,
     MatCardModule,
     MatSidenavModule,
-    ToastrModule
+    ToastrModule.forRoot()
+    
+    
   ],
   providers: [
     PdvService, 
