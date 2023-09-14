@@ -10,7 +10,7 @@ import { Cep } from '../model/cep';
 export class ProcurarcepComponent implements OnInit {
 
   cep: string = '';
-  cepData: Cep | undefined; // Inicialize como undefined
+  cepData: Cep | undefined;
 
   constructor(private pdvService: PdvService) {}
 

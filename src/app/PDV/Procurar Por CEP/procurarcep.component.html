@@ -15,13 +15,12 @@
               [(ngModel)]="cep"
               required
               style="font-size: 18px; padding: 10px; margin-bottom: 10px; width: 100%;"
-              placeholder="Digite o CEP e aperte TAB"
+              placeholder="Digite o CEP"
               maxlength="8"
             />
         </div>
         <button type="button" class="btn btn-primary" (click)="buscarCEP()" style="font-size: 18px; width: 87%; margin-top: 10px;margin-right: -32px; padding: 10px;">Confirmar</button>
       </div>
-      <!-- Outros campos como antes -->
 
       <div *ngIf="cepData">
         <p><strong>CEP:</strong> {{ cepData.cep }}</p>

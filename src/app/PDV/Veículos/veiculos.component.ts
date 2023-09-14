@@ -22,10 +22,10 @@ export class VeiculosComponent {
 
   onSubmit() {
     if (this.veiculoForm.valid) {
-      // O formulário é válido, você pode acessar os valores com this.veiculoForm.value
+      
       console.log('Dados do formulário:', this.veiculoForm.value);
     } else {
-      // O formulário é inválido, mensagens de erro serão exibidas no HTML
+      
       console.log('Formulário inválido');
     }
   }

@@ -1,64 +1,57 @@
-<div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
   <div class="form-container" style="text-align: left; padding: 20px; border: 1px solid #ccc; max-width: 400px; width: 100%;">
-    <h1>Informações sobre Veículos</h1>
-
+    <h1 style="text-align: center;">Informações sobre Veículos</h1>
+    <br>
     <form (ngSubmit)="onSubmit()" [formGroup]="veiculoForm">
-      <label for="modelo">Modelo:</label>
-      <input type="text" id="modelo" name="modelo" formControlName="modelo" required>
-      <div *ngIf="veiculoForm.get('modelo')?.hasError('required') && veiculoForm.get('modelo')?.touched">
-        Este campo é obrigatório.
+      <div class="form-group">
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" formControlName="modelo" required style="width: 100%; text-align: center;">
+        <div *ngIf="veiculoForm.get('modelo')?.hasError('required') && veiculoForm.get('modelo')?.touched">Este campo é obrigatório.</div>
       </div>
+      <br>
+      <div class="form-group">
+        <label for="ano">Ano de Fabricação:</label>
+        <input type="number" id="ano" name="ano" formControlName="anoDeFabricacao" min="1900" max="2099" required style="width: 100%; text-align: center;">
+        <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('required') && veiculoForm.get('anoDeFabricacao')?.touched">Este campo é obrigatório.</div>
+        <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('min') && veiculoForm.get('anoDeFabricacao')?.touched">O ano deve ser no mínimo 1900.</div>
+        <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('max') && veiculoForm.get('anoDeFabricacao')?.touched">O ano deve ser no máximo 2099.</div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" formControlName="marca" required style="width: 100%; text-align: center;">
+        <div *ngIf="veiculoForm.get('marca')?.hasError('required') && veiculoForm.get('marca')?.touched">Este campo é obrigatório.</div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="tipo">Tipo de Veículo:</label>
+        <select id="tipo" name="tipo" formControlName="tipo" required style="width: 100%;">
+          <option value="carro">Carro</option>
+          <option value="moto">Moto</option>
+        </select>
+        <div *ngIf="veiculoForm.get('tipo')?.hasError('required') && veiculoForm.get('tipo')?.touched">Este campo é obrigatório.</div>
+      </div>
+      <br>
 
-      <label for="ano">Ano de Fabricação:</label>
-      <input type="number" id="ano" name="ano" formControlName="anoDeFabricacao" min="1900" max="2099" required>
-      <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('required') && veiculoForm.get('anoDeFabricacao')?.touched">
-        Este campo é obrigatório.
-      </div>
-      <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('min') && veiculoForm.get('anoDeFabricacao')?.touched">
-        O ano deve ser no mínimo 1900.
-      </div>
-      <div *ngIf="veiculoForm.get('anoDeFabricacao')?.hasError('max') && veiculoForm.get('anoDeFabricacao')?.touched">
-        O ano deve ser no máximo 2099.
-      </div>
-
-      <label for="marca">Marca:</label>
-      <input type="text" id="marca" name="marca" formControlName="marca" required>
-      <div *ngIf="veiculoForm.get('marca')?.hasError('required') && veiculoForm.get('marca')?.touched">
-        Este campo é obrigatório.
-      </div>
-
-      <label for="tipo">Tipo de Veículo:</label>
-      <select id="tipo" name="tipo" formControlName="tipo" required>
-        <option value="carro">Carro</option>
-        <option value="moto">Moto</option>
-      </select>
-      <div *ngIf="veiculoForm.get('tipo')?.hasError('required') && veiculoForm.get('tipo')?.touched">
-        Este campo é obrigatório.
-      </div>
-
-      <!-- Campo de portas para carro -->
-      <div *ngIf="veiculoForm.get('tipo')?.value === 'carro'">
+      <div class="form-group" *ngIf="veiculoForm.get('tipo')?.value === 'carro'">
         <label for="portasCarro">Número de Portas do Carro:</label>
-        <select id="portasCarro" name="portasCarro" formControlName="portas" required>
+        <select id="portasCarro" name="portasCarro" formControlName="portas" required style="width: 100%;">
           <option [ngValue]="null" disabled selected hidden>Escolha</option>
           <option value="2">2 Portas</option>
           <option value="4">4 Portas</option>
         </select>
-        <div *ngIf="veiculoForm.get('portas')?.hasError('required') && veiculoForm.get('portas')?.touched">
-          Este campo é obrigatório.
-        </div>
+        <div *ngIf="veiculoForm.get('portas')?.hasError('required') && veiculoForm.get('portas')?.touched">Este campo é obrigatório.</div>
       </div>
+      <br>
 
-      <!-- Campo de portas para moto -->
-      <div *ngIf="veiculoForm.get('tipo')?.value === 'moto'">
+      <div class="form-group" *ngIf="veiculoForm.get('tipo')?.value === 'moto'">
         <label for="portasMoto">Número de Portas da Moto:</label>
-        <select id="portasMoto" name="portasMoto" formControlName="passageiros">
+        <select id="portasMoto" name="portasMoto" formControlName="passageiros" style="width: 100%;">
           <option [ngValue]="null" disabled selected hidden>2 Portas</option>
         </select>
       </div>
-
-      <!-- Outros campos do formulário aqui -->
-      <button type="button" (click)="onSubmit()">Enviar</button>
+      
+      <button type="submit" style="width: 100%;">Enviar</button>
     </form>
   </div>
 </div>

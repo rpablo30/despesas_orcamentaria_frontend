@@ -23,15 +23,13 @@ export class PdvService {
   cadastrarVeiculo(veiculo: Veiculos): Observable<any> {
     console.log('Dados do veículo recebidos no serviço:', veiculo);
 
-    // Use o httpClient para fazer a solicitação HTTP real
     return this.httpClient.post(this.API_URL, veiculo).pipe(
-      map((obj) => obj), // Pode ser necessário mapear a resposta se o servidor retornar algo diferente
+      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
   private errorHandler(error: any): Observable<any> {
     console.error('Erro:', error);
-    // Trate o erro de acordo com suas necessidades
     throw error;
   }
 }
