@@ -1,6 +1,6 @@
-<mat-form-field style="margin-bottom: 10px;">
+<mat-form-field style="margin-bottom: 0px; padding: -20px;">
   <mat-label>Selecione uma opção</mat-label>
-  <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()">
+  <mat-select [(ngModel)]="selectedOption" (selectionChange)="onOptionChange()" style="width: 350px;">
     <mat-option value="welcome">Home</mat-option>
     <mat-option value="palindromos">Números Palíndromos</mat-option>
     <mat-option value="troco">Troco</mat-option>
@@ -8,6 +8,7 @@
     <mat-option value="procurarcep">Pesquisar Por CEP</mat-option>
   </mat-select>
 </mat-form-field>
+
 
 <mat-sidenav-container class="container">
   <mat-sidenav *ngIf="selectedOption !== 'none' && selectedOption !== 'welcome'" class="sidenav" mode="side" opened disableClose>
@@ -18,7 +19,7 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 
-  <div *ngIf="selectedOption === 'welcome'" class="welcome-message" style="background-color: red; text-align: center; padding: 20px; margin-top: 10px;">
+  <div *ngIf="selectedOption === 'welcome'" class="welcome-message" style="background-color: rgb(47, 0, 255); text-align: center; padding: 20px; margin-top: 10px;">
     <h1 style="color: white;">Bem-vindo a aplicação feito pelo Desenvolvedor Rodrigo Pablo</h1>
     <h1 style="color: white;">Feito em Angular e NodeJS</h1>
     <p style="color: white;">Selecione uma opção no menu à esquerda para começar.</p>

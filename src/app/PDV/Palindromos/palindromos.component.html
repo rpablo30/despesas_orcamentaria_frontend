@@ -1,23 +1,25 @@
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <span style="font-size: 24px; margin-bottom: 10px;">Palíndromos</span>
+<div style="display: flex; justify-content: center; align-items: flex-start; min-height: 90vh;">
+  <div class="form-container" style="text-align: center; padding: 30px; border: 1px solid #2d09f5; max-width: 450px; width: 100%;">
+    <h1 style="text-align: center;">Palíndromos</h1>
 
-  <form [formGroup]="form" (ngSubmit)="onFinish()" style="display: flex; flex-direction: column; align-items: center;">
-    <div class="form-group" style="width: 100%;">
-      <label for="n1" style="font-size: 18px;">Número Menor</label>
-      <input type="number" id="n1" class="form-control" formControlName="n1" required style="width: 100%;">
-    </div>
-    <div class="form-group" style="width: 100%;">
-      <label for="n2" style="font-size: 18px;">Número Maior</label>
-      <input type="number" id="n2" class="form-control" formControlName="n2" required style="width: 100%;">
-    </div>
-    <button type="submit" class="btn btn-primary" style="font-size: 18px; margin-top: 10px; width: 100%;">Enviar</button>
-  </form>
+    <form [formGroup]="form" (ngSubmit)="onFinish()">
+      <div class="form-group" style="text-align: left; width: 100%;">
+        <label for="n1" style="font-size: 18px;">Número Menor</label>
+        <input type="number" id="n1" class="form-control" formControlName="n1" required style="width: 100%;">
+      </div>
+      <div class="form-group" style="text-align: left; width: 100%;">
+        <label for="n2" style="font-size: 18px;">Número Maior</label>
+        <input type="number" id="n2" class="form-control" formControlName="n2" required style="width: 100%;">
+      </div>
+      <button type="submit" class="btn btn-primary" style="font-size: 18px; margin-top: 15px; width: 100%;">Enviar</button>
+    </form>
 
-  <div *ngIf="showAnswer" style="text-align: center;">
-    <h2>Palíndromos</h2>
-    <p *ngIf="answer.length > 0; else noPalindromes" style="font-size: 18px;">{{ answer }}</p>
-    <ng-template #noPalindromes>
-      <p style="font-size: 18px;">Nenhum Número Palíndromo</p>
-    </ng-template>
+    <div *ngIf="showAnswer" style="text-align: center;">
+      <h2>Palíndromos</h2>
+      <p *ngIf="answer.length > 0; else noPalindromes" style="font-size: 18px;">{{ answer }}</p>
+      <ng-template #noPalindromes>
+        <p style="font-size: 18px;">Nenhum Número Palíndromo</p>
+      </ng-template>
+    </div>
   </div>
 </div>

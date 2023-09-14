@@ -14,7 +14,7 @@ export class VeiculosComponent {
   veiculo: Veiculos = {
     tipo: 'carro',
     modelo: '',
-    anoDeFabricacao: 0,
+    anoDeFabric: '',
     marca: ''
   };
 
@@ -25,7 +25,7 @@ export class VeiculosComponent {
   ) {
     this.veiculoForm = this.formBuilder.group({
       modelo: ['', Validators.required],
-      anoDeFabricacao: ['', Validators.required],
+      anoDeFabric: ['', Validators.required],
       marca: ['', Validators.required],
       tipo: ['carro', Validators.required],
       portas: ['2'], // Valor padrão
@@ -53,6 +53,7 @@ export class VeiculosComponent {
          
         }
       );
+      this.veiculoForm.reset();
     }
   }
 }

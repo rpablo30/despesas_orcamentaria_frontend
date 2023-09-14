@@ -1,7 +1,7 @@
 export interface Veiculos {
     tipo: string;
     modelo: string;
-    anoDeFabricacao: number;
+    anoDeFabric: string;
     marca: string;
     portas?: number;
     passageiros?: number;

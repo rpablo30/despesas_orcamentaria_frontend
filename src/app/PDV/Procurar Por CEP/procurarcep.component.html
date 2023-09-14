@@ -1,5 +1,7 @@
-<div class="container" style="display: flex; flex-direction: column; align-items: center; margin-top: 10px;">
-    
+<div style="display: flex; justify-content: center; align-items: flex-start; min-height: 90vh;">
+  <div class="container" style="text-align: center; padding: 30px; border: 1px solid #2d09f5; max-width: 450px; width: 100%;">
+    <h1 style="text-align: center;">CEP</h1>
+
     <form #f="ngForm" method="get">
       <div class="form-group" style="display: flex; flex-direction: column; align-items: center;">
         <div class="mb-4" style="display: flex; align-items: center;">
@@ -19,7 +21,7 @@
               maxlength="8"
             />
         </div>
-        <button type="button" class="btn btn-primary" (click)="buscarCEP()" style="font-size: 18px; width: 87%; margin-top: 10px;margin-right: -32px; padding: 10px;">Confirmar</button>
+        <button type="button" class="btn btn-primary" (click)="buscarCEP()" style="font-size: 18px; padding: 10px; width: 55%; margin-top: 15px;margin-right: 19px; margin-left: 49px;">Confirmar</button>
       </div>
 
       <div *ngIf="cepData">
@@ -31,4 +33,5 @@
         <p><strong>DDD:</strong> {{ cepData.ddd }}</p>
       </div>
     </form>
+  </div>
 </div>
